@@ -1,0 +1,14 @@
+<div class="header">
+	<h1>Actors</h1>
+</div>
+
+<div>
+	<% @actors.each do |a| %>
+		<div>
+			<%= image_tag a.image %>
+			<h2> <%= a.first_name + " " + a.last_name %> </h2>
+			<p> <%= a.bio %> </p> 
+			<%= link_to "Learn more", actor_path(a) %>
+		</div>
+	<% end %>
+</div>

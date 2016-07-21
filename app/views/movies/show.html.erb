@@ -1,0 +1,15 @@
+<div>
+	<h1> <%= @movie.title %> </h1>
+	<p> <%= @movie.release_year %> </p>
+	<%= image_tag @movie.image %>
+	<p> <%= @movie.plot %> </p>
+
+	<h2>Actors</h2>
+	<% @actors.each do |a| %>
+		<ul>
+			<%= link_to a.first_name + " " +  a.last_name, actor_path(a) %>  
+		</ul>
+	<% end %>
+	<%= link_to "Back to Movies", :root %> 
+</div>
+

@@ -1,0 +1,17 @@
+<div>
+	<h1> <%= @actor.first_name + " " + @actor.last_name %> </h1>
+	<%= image_tag @actor.image %>
+	<p> <%= @actor.bio %> </p>
+
+	<h2>Parts</h2>
+	<% @movies.each do |m| %>
+		<div>	
+			<%= image_tag m.image %>
+			<h2> <%= m.title %> </h2>
+			<p> <%= m.release_year %> </p>
+			<p> <%= m.plot %> </p> 
+			<%= link_to "Learn more", movie_path(m) %>
+		</div>
+	<% end %>
+</div>
+
